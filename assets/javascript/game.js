@@ -20,14 +20,19 @@ document.getElementById("already-guessed").innerHTML = alreadyGuessed;
 
 
 document.onkeyup = function (event) {
-    //alert("working!"); --- onkeyup funciton working!
+    
     var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
     if (letters.indexOf(event.key) > -1 ) {
         console.log(event.key);
+        
         if (word.indexOf(event.key) > -1 ) {
             console.log(event.key);
             underscoresArr[word.indexOf(event.key)] = event.key;
             document.getElementById("word").innerHTML = underscoresArr.join(' ');
+            // this is what i found online to try???.>>>> recursive 
+            // word.some(function(v,i,a){
+            //     return a.lastIndexOf(v) !=i;
+            // });
         }
     }
 }
