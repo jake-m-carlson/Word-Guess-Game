@@ -30,33 +30,7 @@ document.onkeyup = function (event) {
             document.getElementById("word").innerHTML = underscoresArr.join(' ');
         }
     }
-    // var answerArray = [];
-    
-    // for (var i=0; i < word.length; i++) {
-    //     answerArray[i] = "_";
-    // }
-    // var remainingLetters = word.length;
-
-    // var userGuess = event.key;
-    // var computerGuess = words[Math.floor(Math.random() * words.length)];
-   
-    // console.log(computerGuess); ----- word is generated in console!
-   
-   // lightbulb came up and said to extract to global scope??
-   // var answerArray = [];
-    // for (var i=0; i < words.length; i++) {
-    //     answerArray[i] = "_";
-    // }
 }
-
-// **** not sure if i need these two lines
-
-   
-   
-   
-   
-    // console.log(letters[i]); ------- works!
-
 // player hits one key to start the game
 // a word is randomly chosen, _ _ _ _ appear on right div, guesses = 6,
 // player hits actual key 
