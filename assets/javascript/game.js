@@ -1,20 +1,41 @@
-console.log("hello");
+var wins = 0;
+document.getElementById("wins").innerHTML = document.getElementById("wins").innerHTML + " " + wins;
+
+var losses = 0;
+document.getElementById("losses").innerHTML = document.getElementById("losses").innerHTML + " " + losses;
+
+var guessesRemaining = 9;
+document.getElementById("guesses-remaining").innerHTML = document.getElementById("guesses-remaining").innerHTML + " " + guessesRemaining;
 
 var words = ["baloo" , "simba" , "thumper" , "pegasus" , "flounder" , "rajah" , "winnie"];
 
-// for (var i=0; i < words.length; i++) {
-//     // console.log(words[i]); ----- works!
-// }
+var word = words[Math.floor(Math.random() * words.length)];
+var underscoresArr = '_'.repeat(word.length).split("");
+word = word.split("");
+console.log(word); 
+document.getElementById("word").innerHTML = underscoresArr.join(' ');
+
+var alreadyGuessed = [];
+document.getElementById("already-guessed").innerHTML = alreadyGuessed;
+
+
 document.onkeyup = function (event) {
     //alert("working!"); --- onkeyup funciton working!
-    
-    var word = words[Math.floor(Math.random() * words.length)];
-    var answerArray [];
-    
-    for (var i=0; i < word.length; i++) {
-        answerArray[i] = "_";
+    var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+    if (letters.indexOf(event.key) > -1 ) {
+        console.log(event.key);
+        if (word.indexOf(event.key) > -1 ) {
+            console.log(event.key);
+            underscoresArr[word.indexOf(event.key)] = event.key;
+            document.getElementById("word").innerHTML = underscoresArr.join(' ');
+        }
     }
-    var remainingLetters = word.length;
+    // var answerArray = [];
+    
+    // for (var i=0; i < word.length; i++) {
+    //     answerArray[i] = "_";
+    // }
+    // var remainingLetters = word.length;
 
     // var userGuess = event.key;
     // var computerGuess = words[Math.floor(Math.random() * words.length)];
@@ -29,8 +50,7 @@ document.onkeyup = function (event) {
 }
 
 // **** not sure if i need these two lines
-// var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-// for (var i=0; i < letters.length; i++) {
+
    
    
    
