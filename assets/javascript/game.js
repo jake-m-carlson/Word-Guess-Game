@@ -29,7 +29,7 @@ document.onkeyup = function (event) {
             console.log(event.key);
             underscoresArr[word.indexOf(event.key)] = event.key;
             document.getElementById("word").innerHTML = underscoresArr.join(' ');
-            // this is what i found online to try???.>>>> recursive 
+            // this is what i found online to try???.>>>> recursive, in order to loop back through word to check to see if letter is in the word more than once, but unsuccessful 
             word.some(function(v,i,a){
                 return a.lastIndexOf(v) !=i;
             });
@@ -37,9 +37,15 @@ document.onkeyup = function (event) {
         else {
             alreadyGuessed.push(letters);
             guessesRemaining--;
+            // I thought that this code for else would write the wrong letters into the "alreadyGuessed" h3 id, however unsuccessful
         }
     }
 }
+// The last step in the game to complete is getting a function to complete the game once a win or loss occurs
+// Then having the scores add up the win or loss
+// changing the image on the left to the image of the character
+// running a clear to reset the game for a new character to guess
+
 // player hits one key to start the game
 // a word is randomly chosen, _ _ _ _ appear on right div, guesses = 6,
 // player hits actual key 
