@@ -30,9 +30,13 @@ document.onkeyup = function (event) {
             underscoresArr[word.indexOf(event.key)] = event.key;
             document.getElementById("word").innerHTML = underscoresArr.join(' ');
             // this is what i found online to try???.>>>> recursive 
-            // word.some(function(v,i,a){
-            //     return a.lastIndexOf(v) !=i;
-            // });
+            word.some(function(v,i,a){
+                return a.lastIndexOf(v) !=i;
+            });
+        }
+        else {
+            alreadyGuessed.push(letters);
+            guessesRemaining--;
         }
     }
 }
